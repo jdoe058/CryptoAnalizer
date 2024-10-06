@@ -25,14 +25,16 @@ public class Runner implements Runnable {
         @Parameters(paramLabel = "", description = "key for encryption")
         int key) {
         // TODO
+        var cmd = Commands.ENCRYPT;
+        cmd.algorithm = Algorithm.CAESAR;
+        cmd.algorithm.cypher.setKey(String.valueOf(key));
 
         try (var lines = Files.lines(src)) {
-            var cc = new CaesarCypher(new Alphabet(), key);
-            lines.map(cc::encrypt).forEach(System.out::println);
+            var cont = new Controller(cmd, lines);
+            cont.run();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
