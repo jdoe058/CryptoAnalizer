@@ -13,6 +13,6 @@ public class Controller implements Runnable {
 
     @Override
     public void run() {
-        src.map(cmd::exec).forEach(System.out::println);
+        src.map(cmd.exec).forEach(System.out::println);
     }
 }

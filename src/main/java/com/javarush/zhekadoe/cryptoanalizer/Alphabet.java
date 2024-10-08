@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Алфавит для шифрования
+ * Алфавит - индексированный набор символов.
+ * Сложности получения символа по индексу и
+ * индекса по символу константны О(1)
  */
 public class Alphabet {
     private static final String ALPHABET = " \\\"'"

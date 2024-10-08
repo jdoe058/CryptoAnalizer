@@ -24,10 +24,9 @@ public class Runner implements Runnable {
         Path dest,
         @Parameters(paramLabel = "", description = "key for encryption")
         int key) {
-        // TODO
-        var cmd = Commands.ENCRYPT;
-        cmd.algorithm = Algorithm.CAESAR;
-        cmd.algorithm.cypher.setKey(String.valueOf(key));
+        // TODO cmd = Commands.ENCRYPT.algorithm(Algorithm.CAESAR).key(String.valueOf(key)).input(src).output(dest)
+
+        var cmd = Commands.ENCRYPT.algorithm(Algorithms.CAESAR).key(String.valueOf(key));
 
         try (var lines = Files.lines(src)) {
             var cont = new Controller(cmd, lines);

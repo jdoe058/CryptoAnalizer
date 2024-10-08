@@ -6,6 +6,7 @@ package com.javarush.zhekadoe.cryptoanalizer;
 public interface Cypher {
     /**
      * Зашифровать
+     *
      * @param s исходная строка
      * @return зашифрованная строка
      */
@@ -13,6 +14,7 @@ public interface Cypher {
 
     /**
      * Расшифровать
+     *
      * @param s исходная строка
      * @return расшифрованная строка
      */
@@ -20,7 +22,9 @@ public interface Cypher {
 
     /**
      * Установить ключ шифрования
+     *
      * @param key
+     * @return текущий
      */
-    void setKey(String key);
+    Cypher key(String key);
 }
