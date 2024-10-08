@@ -1,5 +1,8 @@
 package com.javarush.zhekadoe.cryptoanalizer;
 
+/**
+ * Шифрование методом Цезаря
+ */
 public class CaesarCypher implements Cypher {
     private final Alphabet alphabet;
     private int key;
@@ -9,12 +12,12 @@ public class CaesarCypher implements Cypher {
         this.key = key;
     }
 
-    public char encryptChar (int c) {
+    private char encryptChar (int c) {
         var index = alphabet.getIndexByChar((char) c);
         return index == null ? (char) c : alphabet.getCharByIndex(index + key);
     }
 
-    public char decryptChar (int c) {
+    private char decryptChar (int c) {
         var index = alphabet.getIndexByChar((char) c);
         return index == null ? (char) c : alphabet.getCharByIndex(index - key);
     }

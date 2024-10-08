@@ -2,16 +2,17 @@ package com.javarush.zhekadoe.cryptoanalizer;
 
 import java.util.stream.Stream;
 
-public class Controller {
-    private Commands cmd;
-    private Stream<String> src;
+public class Controller implements Runnable {
+    private final Commands cmd;
+    private final Stream<String> src;
 
     public Controller(Commands cmd, Stream<String> src) {
         this.cmd = cmd;
         this.src = src;
     }
 
-    void run() {
+    @Override
+    public void run() {
         src.map(cmd::exec).forEach(System.out::println);
     }
 }
