@@ -23,7 +23,7 @@ public interface Cypher {
     /**
      * Установить ключ шифрования
      *
-     * @param key
+     * @param key ключ шифрования
      * @return текущий
      */
     Cypher key(String key);

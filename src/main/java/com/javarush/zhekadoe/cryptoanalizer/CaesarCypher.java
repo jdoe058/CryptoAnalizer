@@ -44,7 +44,7 @@ public class CaesarCypher implements Cypher {
     }
 
     @Override
-    public CaesarCypher key(String key) {
+    public Cypher key(String key) {
         this.key = Integer.parseInt(key);
         return this;
     }
